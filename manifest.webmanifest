@@ -1,0 +1,16 @@
+{
+  "id": "./",
+  "name": "รอบเงิน — สมุดเงินของฉัน",
+  "short_name": "รอบเงิน",
+  "lang": "th",
+  "description": "บันทึกรายรับรายจ่าย เตรียมบิลและเงินเก็บ ใช้ได้ออฟไลน์",
+  "start_url": "./#overview",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f8f9",
+  "theme_color": "#007f70",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"}
+  ]
+}
