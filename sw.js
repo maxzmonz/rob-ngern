@@ -1,6 +1,6 @@
 /* รอบเงิน: public application files only. Never cache auth/API/ledger responses. */
 'use strict';
-const VERSION = 'v8-e98ab6635ec0';
+const VERSION = 'v9-712fd561b7a5';
 const ROOT = self.registration.scope;
 const SCOPE = new URL(ROOT);
 const PREFIX = 'rob-ngern-shell:' + SCOPE.pathname + ':';
@@ -11,7 +11,10 @@ const FILES = ['index.html','manifest.webmanifest','icons/icon-192.png','icons/i
 const WARM = [
  'https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js',
  'https://cdn.jsdelivr.net/npm/sweetalert2@11.17.2/dist/sweetalert2.all.min.js',
- 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4',
+ 'https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3',
+ 'https://cdn.jsdelivr.net/npm/daisyui@5.7.46/daisyui.css',
+ 'https://cdn.jsdelivr.net/npm/lucide@1.48.0/dist/umd/lucide.min.js',
+ 'https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap',
  'https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js',
  'https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js',
  'https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js'
