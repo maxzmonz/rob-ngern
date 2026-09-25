@@ -431,7 +431,15 @@ function makeBackend(f,db,ref,convert){return{
   const value={schema:5,revision:expected+1,stateJson:JSON.stringify(state),mutationId,updatedAt:f.serverTimestamp()};tx.set(r,value);return value;
  });}
 };}
-const firebaseConfig={apiKey:'AIzaSyC3lNpBDSOQT5OD2hzKFQEkdViSGfrD4V8',authDomain:'rob-ngern-db.firebaseapp.com',projectId:'rob-ngern-db',storageBucket:'rob-ngern-db.firebasestorage.app',messagingSenderId:'216399124363',appId:'1:216399124363:web:1775f9902f20e4ff0f018e',measurementId:'G-G2P4V9SJYB'};
+const firebaseConfig = {
+  apiKey: "AIzaSyC3lNpBDSOQT5OD2hzKFQEkdViSGfrD4V8",
+  authDomain: "rob-ngern-db.firebaseapp.com",
+  projectId: "rob-ngern-db",
+  storageBucket: "rob-ngern-db.firebasestorage.app",
+  messagingSenderId: "216399124363",
+  appId: "1:216399124363:web:1775f9902f20e4ff0f018e",
+  measurementId: "G-G2P4V9SJYB"
+};
 let modules,auth,db,initializing;
 const bridge={store:null,ready:false,error:'',async init(){if(this.ready)return;if(initializing)return initializing;initializing=(async()=>{try{
  const version='12.19.0';const [app,a,f]=await Promise.all(['app','auth','firestore'].map(n=>import(`https://www.gstatic.com/firebasejs/${version}/firebase-${n}.js`)));modules={a,f};const instance=app.initializeApp(firebaseConfig);auth=a.getAuth(instance);await a.setPersistence(auth,a.browserLocalPersistence);try{db=f.initializeFirestore(instance,{localCache:f.persistentLocalCache({tabManager:f.persistentMultipleTabManager()})});}catch{db=f.getFirestore(instance);}
