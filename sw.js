@@ -1,6 +1,6 @@
 /* รอบเงิน: public application files only. Never cache auth/API/ledger responses. */
 'use strict';
-const VERSION = 'v9-3b797d36a298';
+const VERSION = 'v9-eec658f66d5d';
 const ROOT = self.registration.scope;
 const SCOPE = new URL(ROOT);
 const PREFIX = 'rob-ngern-shell:' + SCOPE.pathname + ':';
