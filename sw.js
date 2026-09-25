@@ -1,6 +1,6 @@
 /* รอบเงิน: public application files only. Never cache auth/API/ledger responses. */
 'use strict';
-const VERSION = 'v5-34074c641b0d';
+const VERSION = 'v8-e98ab6635ec0';
 const ROOT = self.registration.scope;
 const SCOPE = new URL(ROOT);
 const PREFIX = 'rob-ngern-shell:' + SCOPE.pathname + ':';
@@ -73,3 +73,5 @@ self.addEventListener('message',event=>{
  if(event.data?.type==='ACTIVATE_UPDATE')event.waitUntil(self.skipWaiting());
  if(event.data?.type==='WARM_PUBLIC_ASSETS')event.waitUntil(Promise.allSettled(WARM.map(url=>cachedAsset(new Request(url,{mode:'cors',credentials:'omit'}),PUBLIC))));
 });
+
+self.addEventListener('notificationclick',event=>{event.notification.close();event.waitUntil((async()=>{const list=await self.clients.matchAll({type:'window',includeUncontrolled:true});for(const client of list)if(client.url.startsWith(ROOT)){await client.navigate(new URL('./#personal',ROOT).href);return client.focus();}return self.clients.openWindow(new URL('./#personal',ROOT).href);})());});
